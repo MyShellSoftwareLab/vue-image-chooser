@@ -1,6 +1,6 @@
 {
-  "name": "vue-image-chooser",
-  "version": "0.5.14",
+  "name": "@myshell/vue-image-chooser",
+  "version": "0.5.19",
   "description": "Simple Image Uploader for Vue",
   "main": "dist/library.esm.js",
   "keywords": [
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schumskie/vue-image-chooser.git"
+    "url": "git+https://github.com/MyShellSoftwareLab/vue-image-chooser.git"
   },
   "scripts": {
     "dev": "vue serve src/ImageChooser.vue",
@@ -20,6 +20,13 @@
     "dist/*"
   ],
   "author": "Stefan Jeremić",
+  "contributors": [
+    {
+      "name": "Guss Rw",
+      "email": "gussrw1@gmail.com",
+      "url": "https://gussrw.ml"
+    }
+  ],
   "license": "ISC",
   "devDependencies": {
     "rollup-plugin-commonjs": "^10.1.0",
@@ -29,5 +36,8 @@
     "sass-loader": "^10.1.1",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
+  },
+  "dependencies": {
+    "postcss": "^8.4.5"
   }
 }

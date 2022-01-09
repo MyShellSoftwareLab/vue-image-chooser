@@ -1,6 +1,6 @@
 <template>
-  <div :style="style" class="image-uploader">
-    <label :for="name">
+  <div :style="style" class="image-uploader" :class="{disabled: disabled}">
+    <label :for="name" :class="{disabled: disabled}">
       <svg
         v-if="!src && !baseSrc"
         viewBox="0 0 99 80"
@@ -34,16 +34,17 @@
           </g>
         </g>
       </svg>
-      <p v-if="!src">{{ displayName }}</p>
+      <p v-if="!src && !disabled">{{ displayName }}</p>
       <div v-if="uploading" class="progress-overlay">
         <span>{{ progress }} %</span>
       </div>
-      <div v-else-if="src" class="overlay">Change Photo</div>
+      <div v-else-if="src && !disabled" class="overlay">{{ displayName }}</div>
     </label>
     <input
       ref="inputFile"
       :id="name"
       :name="name"
+      :disabled="disabled"
       type="file"
       accept="image/*"
       style="display:none;"
@@ -66,6 +67,10 @@ export default {
     baseSrc: {
       type: String,
       default: ""
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
     height: {
       type: String,
@@ -137,6 +142,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.disabled {
+    cursor: default !important;
+    pointer-events: none !important;
+}
 .image-uploader {
   cursor: pointer;
   display: flex;

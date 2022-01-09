@@ -70,6 +70,7 @@ The component takes five props:
 - `error` (String): Error message in case that server responded with error
 - `height` (String): Default is `350px`
 - `displayName` (String): Default is `Add Photo` - text that appears below the camera image
+- `disabled` (Boolean): Default is `false` - image can't be change
 
 The component emits `change` event with single file as data, when it recieve an image, after it can be uploaded as described above)
 
